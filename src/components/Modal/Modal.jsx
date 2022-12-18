@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 // import { createPortal } from 'react-dom';
-import ReactDOM from 'react-dom/client';
+import PortalReactDOM from 'react-dom';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Backdrop, ModalWrapper, Wrapper, Title, Button } from './Modal.styled';
 
@@ -26,7 +26,7 @@ function Modal({ children, onClose }) {
     }
   };
 
-  return ReactDOM.createPortal(
+  return PortalReactDOM.createPortal(
     <Backdrop onClick={onBackdropClick}>
       <ModalWrapper>
         <Wrapper>
