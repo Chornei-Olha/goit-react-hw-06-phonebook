@@ -38,7 +38,7 @@ function Modal({ children, onClose }) {
         {children}
       </ModalWrapper>
     </Backdrop>,
-    document.querySelector("#modal-root")
+    document.querySelector("modal")
   );
 }
 
