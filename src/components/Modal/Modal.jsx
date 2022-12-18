@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
-import { createPortal } from 'react-dom';
+// import { createPortal } from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Backdrop, ModalWrapper, Wrapper, Title, Button } from './Modal.styled';
 
-const modalRoot = document.querySelector('#modal-root');
+// const modalRoot = document.querySelector('#modal-root');
 
 function Modal({ children, onClose }) {
   useEffect(() => {
@@ -25,7 +26,7 @@ function Modal({ children, onClose }) {
     }
   };
 
-  return createPortal(
+  return ReactDOM.createPortal(
     <Backdrop onClick={onBackdropClick}>
       <ModalWrapper>
         <Wrapper>
@@ -37,7 +38,7 @@ function Modal({ children, onClose }) {
         {children}
       </ModalWrapper>
     </Backdrop>,
-    modalRoot,
+    document.querySelector("#modal-root")
   );
 }
 
